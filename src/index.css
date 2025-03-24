@@ -1,1 +1,10 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+
+* {
+  font-family: "Geist Mono", monospace, ui-monospace, SFMono-Regular,
+    Roboto Mono, Menlo, Monaco, Liberation Mono, DejaVu Sans Mono, Courier New,
+    monospace;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
