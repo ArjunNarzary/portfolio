@@ -6,7 +6,17 @@ interface IToggleDarkMode {
 }
 
 const useToggleDarkMode = (): IToggleDarkMode => {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(() => {
+    if (
+      localStorage.getItem("theme") === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      return true
+    } else {
+      return false
+    }
+  })
   const toggleDarkMode = () => setDarkMode((prev) => !prev)
 
   useEffect(() => {
