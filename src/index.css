@@ -1,5 +1,6 @@
-@import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 * {
   font-family: "Geist Mono", monospace, ui-monospace, SFMono-Regular,
@@ -7,4 +8,61 @@
     monospace;
   font-optical-sizing: auto;
   font-style: normal;
+  scrollbar-color: #161617 #0000;
+  scrollbar-width: thin;
+}
+
+html {
+  scroll-behavior: smooth;
+  @apply bg-neutral-100;
+}
+
+body {
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark {
+  @apply bg-neutral-950;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+}
+
+/* Custom styles for links and sections */
+section {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle hover animations */
+a,
+button {
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover,
+button:hover {
+  transform: translateY(-2px);
 }
