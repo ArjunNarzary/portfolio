@@ -8,6 +8,8 @@
     monospace;
   font-optical-sizing: auto;
   font-style: normal;
+  scrollbar-color: #161617 #0000;
+  scrollbar-width: thin;
 }
 
 html {
